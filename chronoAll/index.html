@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrono by Nico</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div id="back">
+
+        <!-- Header -->
+        <header>
+
+            <h1>ChronOrn</h1>
+
+        </header>
+
+        <!-- Main -->
+        <main>
+
+            <!-- ============= -->
+            <!-- Ecran Accueil -->
+            <!-- ============= -->
+            <section id="ecranAccueil">
+
+                <!-- Favori -->
+                <article id="favori">
+
+                    <button type="button">☆</button>
+                    <label for="choixFavori"></label>
+                    <select class="miniDeroulant" id="choixFavori" name="choixFavori">
+                        <option value="option0" hidden>Favoris</option>
+                    </select>
+
+                </article>
+
+                <!-- Qte Actions -->
+                <article id="qteActions">
+
+                    <label for="qteActions">Combien de mouvement ?</label>
+                    <input type="number" id="choixJoueur" min="1" max="8" value="1">
+                    </select>
+
+                </article>
+
+                <!-- Action & Repos -->
+                <article id="actionRepos">
+
+                        <!-- Action -->
+                        <div id="action">
+                            <input type="text"id="action1" name="action1" rows="1" cols="20" maxlength="25" placeholder="Action 1" style="resize: none;">
+                            <label for="dureeAction"></label>
+                            <select class="miniDeroulant" id="dureeAction" name="dureeAction">   
+                                <option value="option1" selected>20sec</option>                 
+                                <option value="option2">30sec</option>               
+                                <option value="option2">40sec</option>     
+                                <option value="option1">50sec</option>                 
+                                <option value="option2">60sec</option>                      
+                            </select>
+                        </div>
+
+                        <!-- Repos -->
+                        <div id="repos">
+                            <p>Repos</p>
+                            <label for="dureeRepos"></label>
+                            <select class="miniDeroulant" id="dureeRepos" name="dureeRepos">   
+                                <option value="option1" selected>20sec</option>                 
+                                <option value="option2">30sec</option>               
+                                <option value="option2">40sec</option>                         
+                            </select>
+                        </div>
+
+                </article>
+
+                <!-- QteCycle & entreCycle -->
+                <article id="cycle">
+
+                    <label for="qteCycle">Quantité de cycles</label>
+                    <select class="miniDeroulant" id="qteCycle" name="qteCycle">
+                        <option value="option1" selected>1</option>                
+                        <option value="option2">2</option>                 
+                        <option value="option2">3</option>       
+                        <option value="option1">4</option>                                               
+                    </select>
+
+                    <label for="entreCycle">Repos entre les cycles</label>
+                    <select class="miniDeroulant" id="entreCycle" name="entreCycle">    
+                        <option value="option1" selected>1min</option>                 
+                        <option value="option2">2min</option>                         
+                    </select>
+
+                </article>
+
+                <!-- Démarrer -->
+                <article id="parentDemarrer">
+                    <button type="button" id="demarrer">Démarrer</button>
+                </article>
+                    
+            </section>
+
+            <!-- ============ -->
+            <!-- Ecran Chrono -->
+            <!-- ============ -->
+            <section id="ecranChrono" class="cache">
+
+                <h2 id="circuit">Circuit -/ 3</h2>
+
+                <!-- Action + Repos -->
+                <article id="actionRepos">
+
+                    <h2 id="actionTxt" >Action</h2>
+                    <h2 id="reposTxt">Repos</h2>
+
+                </article>
+
+                <!-- Timer -->
+                <p id="timer">01:00</p>
+
+                <!-- Start & Stop -->
+                <article id="startStop">
+
+                    <button type="button" id="startBtn">Start</button>
+                    <button type="button" id="stopBtn">Stop</button>
+
+                </article>
+
+                <!-- Retour Accueil -->
+                <button type="button" id="retourAccueil">Accueil</button>
+
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+
+            <p>&copy; by DevOrn</p>
+
+        </footer>
+    </div>
+
+</body>
+</html>
