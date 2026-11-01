@@ -44,7 +44,6 @@ h1 {
     font-size: 3rem;
 }
 
-
 /* Footer */
 
 footer {
@@ -79,7 +78,9 @@ footer {
 
 #favori select {
     padding: 0.3rem;
+    width: 8rem;
     border-radius: 1rem;
+    text-align: center;
 }
 
 /* Qte Actions */
@@ -150,7 +151,10 @@ footer {
     width: 8.3rem;      /* A modifier */
     text-align: center;
     font-size: 1rem;
-    font-weight: 600;
+    border: 1px solid var(--cadre);
+    border-bottom: none;
+    border-top: none;
+    border-radius: 3rem;
 }
 
 #repos select {
@@ -188,4 +192,124 @@ footer {
     font-size: 2rem;
     font-weight: 600;
     border-radius: 3rem;
+}
+
+/* ===================== */
+/* Mise en page - Chrono */
+/* ===================== */
+
+h2 {
+text-align: center;
+margin-bottom: 1rem;
+}
+
+/* ================================================================= */
+
+.progress-container {
+  position: relative;
+  width: 400px;
+  height: 45px;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+/* Base pour centrer les textes au milieu */
+.progress-text-background,
+.progress-text-foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px; /* Même largeur que le conteneur */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- TEXTE DE FOND (Gris) --- */
+.progress-text-background {
+  color: #333333;
+}
+.progress-text-background::before {
+  content: "";
+  animation: changement-texte 10s linear forwards;
+}
+
+/* --- LA BARRE DE PROGRESSION --- */
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #3498db;
+  width: 0%;
+  overflow: hidden; /* Masque le texte blanc qui dépasse */
+  animation: progression-fluide 10s linear forwards;
+}
+
+/* --- TEXTE DE PREMIER PLAN (Blanc) --- */
+.progress-text-foreground {
+  color: #ffffff;
+}
+.progress-text-foreground::before {
+  content: "";
+  animation: changement-texte 10s linear forwards;
+}
+
+/* --- ANIMATIONS CSS --- */
+
+/* 1. Animation de la barre */
+@keyframes progression-fluide {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* 2. Animation du texte (Exemple sur 10 secondes) */
+@keyframes changement-texte {
+  0%   { content: "Calcul des données..."; }
+  30%  { content: "Analyse en cours..."; }    /* Change à 3s (30%) */
+  70%  { content: "Génération du rapport..."; } /* Change à 7s (70%) */
+  100% { content: "Génération du rapport..."; }
+}
+
+/* ============================================================================= */
+
+/* Timer */
+
+#timer {
+    margin: 4rem auto;
+    border-top: 1px solid var(--cadre);
+    border-bottom: 1px solid var(--cadre);
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 5rem;
+    color: var(--cadre);
+}
+
+/* Start & Stop */
+
+#startStop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+#startStop button {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 3rem;
+}
+
+#retourAccueil {
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border-radius: 1rem;
+    font-size: 1.25rem;
 }
