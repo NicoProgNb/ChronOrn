@@ -1,3 +1,5 @@
 .vscode
 anciennesVersions
 cahier_des_charges.md
+node_modules
+package-lock.json
