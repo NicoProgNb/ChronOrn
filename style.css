@@ -1,0 +1,315 @@
+/* Variables */
+:root {
+    --back:#1a1d24;
+    --text:#f2f3f5;
+    --cadre:rgb(91, 140, 255);
+    --ok:#4caf7d;
+}
+
+/* RAZ */
+* {
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================== */
+/* Mise en page - Toutes sections */
+/* ============================== */
+
+.cache {
+    display: none;
+}
+
+body {
+    padding:1rem;
+    background:black;
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+
+#back {
+    padding: 2rem;
+    height: 100%;
+    box-shadow:0 1rem 2rem black;
+    background:var(--back);
+    border-radius:1rem;
+}
+
+/* Header */
+
+h1 {
+    margin-bottom: 3rem ;
+    text-align: center;
+    font-size: 3rem;
+}
+
+/* Footer */
+
+footer {
+    text-align: end;
+    font-weight: 600;
+}
+
+/* ====================== */
+/* Mise en page - Accueil */
+/* ====================== */
+
+/* Favori */
+
+#favori {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+#favori button {
+    
+    padding: 0.2rem 0.5rem;
+    border-radius: 3rem;
+    font-size: 1rem;
+}
+
+#favori button:hover {
+    color: gold;
+}
+
+#favori select {
+    padding: 0.3rem;
+    width: 8rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+/* Qte Actions */
+
+#qteActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+}
+
+#qteActions input {
+    padding: 0.3rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+/* Action & Repos */
+
+#actionRepos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border: 5px solid var(--cadre);
+    border-radius: 2rem;
+}
+
+#action {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+#action input {
+    padding: 0.2rem;
+    max-width: 50%;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+#action select {
+    padding: 0.3rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+#repos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+#repos p {
+    padding: 0.2rem;
+    width: 8.3rem;      /* A modifier */
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid var(--cadre);
+    border-bottom: none;
+    border-top: none;
+    border-radius: 3rem;
+}
+
+#repos select {
+    padding: 0.3rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+/* Qte cycle & Entre Cycles */
+
+#cycle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#cycle select {
+    padding: 0.3rem;
+    width: 5rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+/* Démarrer */
+
+#parentDemarrer {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+#parentDemarrer button {
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 3rem;
+}
+
+/* ===================== */
+/* Mise en page - Chrono */
+/* ===================== */
+
+h2 {
+text-align: center;
+margin-bottom: 1rem;
+}
+
+/* ================================================================= */
+
+.progress-container {
+  position: relative;
+  width: 400px;
+  height: 45px;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+/* Base pour centrer les textes au milieu */
+.progress-text-background,
+.progress-text-foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px; /* Même largeur que le conteneur */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- TEXTE DE FOND (Gris) --- */
+.progress-text-background {
+  color: #333333;
+}
+.progress-text-background::before {
+  content: "";
+  animation: changement-texte 10s linear forwards;
+}
+
+/* --- LA BARRE DE PROGRESSION --- */
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #3498db;
+  width: 0%;
+  overflow: hidden; /* Masque le texte blanc qui dépasse */
+  animation: progression-fluide 10s linear forwards;
+}
+
+/* --- TEXTE DE PREMIER PLAN (Blanc) --- */
+.progress-text-foreground {
+  color: #ffffff;
+}
+.progress-text-foreground::before {
+  content: "";
+  animation: changement-texte 10s linear forwards;
+}
+
+/* --- ANIMATIONS CSS --- */
+
+/* 1. Animation de la barre */
+@keyframes progression-fluide {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* 2. Animation du texte (Exemple sur 10 secondes) */
+@keyframes changement-texte {
+  0%   { content: "Calcul des données..."; }
+  30%  { content: "Analyse en cours..."; }    /* Change à 3s (30%) */
+  70%  { content: "Génération du rapport..."; } /* Change à 7s (70%) */
+  100% { content: "Génération du rapport..."; }
+}
+
+/* ============================================================================= */
+
+/* Timer */
+
+#timer {
+    margin: 4rem auto;
+    border-top: 1px solid var(--cadre);
+    border-bottom: 1px solid var(--cadre);
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 5rem;
+    color: var(--cadre);
+}
+
+/* Start & Stop */
+
+#startStop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+#startStop button {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 3rem;
+}
+
+#retourAccueil {
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+}
