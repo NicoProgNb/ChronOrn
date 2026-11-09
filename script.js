@@ -1,7 +1,7 @@
-import { readFileSync, existsSync, writeFileSync } from 'fs'
-import { join } from 'path'
-import { homedir } from 'os'
-import readline from 'readline'
+// import { readFileSync, existsSync, writeFileSync } from 'fs'
+// import { join } from 'path'
+// import { homedir } from 'os'
+// import readline from 'readline'
 import { afficher } from "./utils.js"
 
 // Constantes
@@ -11,9 +11,7 @@ const ecranChrono = document.getElementById("ecranChrono")
 const btnDemarrer = document.getElementById("demarrer")
 const btnRetour = document.getElementById('retourAccueil')
 
-// Variables
-
-
+// Fonctions - cf utils.js
 
 
 // =================== //
